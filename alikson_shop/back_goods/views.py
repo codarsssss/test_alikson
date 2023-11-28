@@ -42,6 +42,7 @@ class CategoryFilteredProductListView(generics.ListAPIView):
                 characteristics__characteristic__name=characteristic_name,
                 characteristics__value=characteristic_value
             )
+
         return Product.objects.filter(category_id=category_id)
 
 

@@ -9,24 +9,24 @@ class ProductTests(TestCase):
     def setUp(self):
         self.client = APIClient()
 
-        # Создаем несколько объектов Manufacturer и Category
+        # Создаем Manufacturer и Category
         self.manufacturer = Manufacturer.objects.create(name='Test Manufacturer')
         self.category = Category.objects.create(name='Test Category')
 
-        # Создаем объект Product
+        # Создаем Product
         self.product = Product.objects.create(
             name='Test Product',
             category=self.category,
             manufacturer=self.manufacturer
         )
 
-        # Создаем объект Characteristic
+        # Создаем Characteristic
         self.characteristic = Characteristic.objects.create(
             name='Test Characteristic',
             value='Test Value'
         )
 
-        # Создаем объект ProductCharacteristic
+        # Создаем ProductCharacteristic
         self.product_characteristic = ProductCharacteristic.objects.create(
             product=self.product,
             characteristic=self.characteristic,
@@ -62,7 +62,7 @@ class ProductTests(TestCase):
         url = reverse('product-list', args=[self.category.id])
         response = self.client.get(url)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(len(response.data), 1)  # Предполагаем, что у категории уже есть один товар
+        self.assertEqual(len(response.data), 1)
 
     def test_get_product_detail(self):
         url = reverse('product-detail', args=[self.product.id])
