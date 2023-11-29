@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'back_goods.apps.BackGoodsConfig',
     'rest_framework',
+    'drf_yasg',
 ]
 
 MIDDLEWARE = [

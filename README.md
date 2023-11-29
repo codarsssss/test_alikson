@@ -1,6 +1,8 @@
 # test_alikson
+### Документация
+http://127.0.0.1:8000/swagger/?format=openapi
 
-### Примеры запросов
+### Примеры запросов для Postman:
 ###### Создание производителя
 POST http://localhost:8000/manufacturers/
 
