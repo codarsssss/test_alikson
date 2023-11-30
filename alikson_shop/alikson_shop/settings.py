@@ -88,10 +88,11 @@ DATABASES = {
         "NAME": "alikson_db",
         "USER": "root",
         "PASSWORD": 'root',
-        "HOST": "localhost",
+        "HOST": "db",
         "PORT": 5432,
     }
 }
+
 
 
 # Password validation
