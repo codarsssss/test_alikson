@@ -20,12 +20,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-ls+vgr^0-yvz-kxf++$$a@8ja1kxzuf@1b8xqu&-g5xkb43@^1'
+SECRET_KEY = 'django-insecure-ls+vgr^0-yvz-kxf++$$a@8ja1kfdsaljxzuf@1b8xqu&-g5xkb43@^1'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = 'localhost', '127.0.0.1'
 
 
 # Application definition
@@ -77,9 +77,13 @@ WSGI_APPLICATION = 'alikson_shop.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "alikson_db",
+        "USER": "root",
+        "PASSWORD": 'root',
+        "HOST": "localhost",
+        "PORT": 5432,
     }
 }
 
